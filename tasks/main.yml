@@ -1,0 +1,36 @@
+---
+# Main tasks for configuring kdump on RedHat 8
+- name: Ensure kdump is installed
+  yum:
+    name: kexec-tools
+    state: present
+
+- name: Configure kdump memory usage
+  lineinfile:
+    path: /etc/sysconfig/kdump
+    regexp: '^KDUMP_COMMANDLINE_APPEND='
+    line: 'KDUMP_COMMANDLINE_APPEND="crashkernel={{ kdump_memory }}@auto"'
+    state: present
+  notify: restart kdump
+
+- name: Configure kdump path
+  lineinfile:
+    path: /etc/kdump.conf
+    regexp: '^path'
+    line: 'path {{ kdump_path }}'
+    state: present
+  notify: restart kdump
+
+- name: Configure core collector
+  lineinfile:
+    path: /etc/kdump.conf
+    regexp: '^core_collector'
+    line: 'core_collector {{ kdump_core_collector }}'
+    state: present
+  notify: restart kdump
+
+- name: Enable kdump service
+  service:
+    name: kdump
+    enabled: "{{ kdump_enabled }}"
+    state: started

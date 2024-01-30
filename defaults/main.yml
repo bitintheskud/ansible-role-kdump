@@ -1,0 +1,6 @@
+---
+# Default variables for configuring kdump on RedHat 8
+kdump_enabled: true
+kdump_memory: 256M
+kdump_path: /var/crash
+kdump_core_collector: makedumpfile -l --message-level 1 -d 31

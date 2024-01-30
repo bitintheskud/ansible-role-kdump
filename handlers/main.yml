@@ -1,0 +1,6 @@
+---
+# Handlers for restarting kdump service if needed
+- name: restart kdump
+  service:
+    name: kdump
+    state: restarted

@@ -1,0 +1,17 @@
+---
+# Role metadata, including author, license, platforms, and dependencies
+galaxy_info:
+  author: Your Name
+  description: Ansible role to configure kdump on RedHat 8
+  company: Your Company
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - 8
+  galaxy_tags:
+    - system
+    - kdump
+    - redhat
+dependencies: []
