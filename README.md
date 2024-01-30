@@ -1,11 +1,29 @@
-# Ansible Role: kdump
+# Ansible Role: ansible-role-kdump
 
-This Ansible role configures kdump on RedHat 8 systems.
+This Ansible role is used for [brief description of the role's purpose].
 
 ## Requirements
 
-None.
+No specific requirements.
 
 ## Role Variables
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
+Below is a list of default values along with a description for each variable.## Dependencies
+
+A list of other roles hosted on Galaxy or elsewhere that this role depends on.
+
+- dependency1
+- dependency2
+
+## Example Playbook
+
+Including an example of how to use your role:
+
+
+## License
+
+[License Name]
+
+## Author Information
+
+This role was created in 2023 by bitintheskud.
